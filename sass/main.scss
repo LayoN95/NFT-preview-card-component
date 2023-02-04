@@ -1,0 +1,153 @@
+@import "./colors";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Outfit", sans-serif;
+  background-color: $very_dark_blue_main_bg;
+}
+
+.card {
+  margin: 3rem;
+  padding: 2.5rem;
+  background-color: $very_dark_blue_card_bg;
+  border-radius: 2rem;
+  &__img {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+
+    .shadow {
+      position: absolute;
+      background-color: $cyan;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 99%;
+      border-radius: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    &:hover .card__view-icon {
+      opacity: 1;
+    }
+    &:hover .shadow {
+      opacity: 0.3;
+    }
+  }
+  img {
+    border-radius: 1rem;
+    width: 100%;
+  }
+  &__view-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: 5rem;
+    transition: opacity 0.3s;
+  }
+  &__title {
+    margin-top: 2rem;
+    color: $white;
+    cursor: pointer;
+    transition: color 0.3s;
+    &:hover {
+      color: $cyan;
+    }
+  }
+  &__text {
+    margin-top: 2rem;
+    line-height: 2.5rem;
+    color: $soft_blue;
+    font-weight: 300;
+    font-size: 1.6rem;
+  }
+  &__info {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__value {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    // margin-top: 2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $cyan;
+    img {
+      width: 1.2rem;
+    }
+  }
+  &__time {
+    display: flex;
+    align-items: center;
+    // justify-content: end;
+    justify-self: end;
+    gap: 1rem;
+    color: $soft_blue;
+    font-size: 1.6rem;
+    img {
+      width: 2rem;
+    }
+  }
+  &__line {
+    margin-top: 2rem;
+    width: 100%;
+    height: 1px;
+    background-color: $vrry_dark_blue_line;
+  }
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    color: $soft_blue;
+    font-size: 1.6rem;
+    font-weight: 300;
+    span {
+      color: $white;
+      cursor: pointer;
+      transition: color 0.3s;
+      &:hover {
+        color: $cyan;
+      }
+    }
+    img {
+      width: 3.5rem;
+      border: 1px solid $white;
+      border-radius: 50%;
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: $white;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 576px) {
+  .card {
+    width: 320px;
+  }
+}
